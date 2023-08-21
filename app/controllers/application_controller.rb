@@ -31,6 +31,13 @@ class ApplicationController < ActionController::API
         end
     end
 
+    def destroy 
+        @post = Post.find(params[:id])
+        @post.destroy
+
+        head :ok
+    end
+
     private 
 
     def post_params
